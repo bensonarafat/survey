@@ -1,39 +1,24 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
 
-import './bootstrap';
 import { createApp } from 'vue';
+import App from '../js/layouts/App.vue'
+import router from '../js/router/index'
+import { initializeApp } from "firebase/app";
+import 'flowbite';
 
-/**
- * Next, we will create a fresh Vue application instance. You may then begin
- * registering components with the application instance so they are ready
- * to use in your application's views. An example is included for you.
- */
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+    apiKey: "AIzaSyBqiejmV7j7AqKPJaJnVh3kh4mie_c8Cec",
+    authDomain: "surveyapp-2e476.firebaseapp.com",
+    projectId: "surveyapp-2e476",
+    storageBucket: "surveyapp-2e476.appspot.com",
+    messagingSenderId: "900321847326",
+    appId: "1:900321847326:web:34f2d15603f08a746a260f",
+    measurementId: "G-ZW3RFG4S15"
+  };
 
-const app = createApp({});
-
-import ExampleComponent from './components/ExampleComponent.vue';
-app.component('example-component', ExampleComponent);
-
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
-
-// Object.entries(import.meta.glob('./**/*.vue', { eager: true })).forEach(([path, definition]) => {
-//     app.component(path.split('/').pop().replace(/\.\w+$/, ''), definition.default);
-// });
-
-/**
- * Finally, we will attach the application instance to a HTML element with
- * an "id" attribute of "app". This element is included with the "auth"
- * scaffolding. Otherwise, you will need to add an element yourself.
- */
-
-app.mount('#app');
+// Initialize Firebase
+initializeApp(firebaseConfig);
+createApp(App)
+.use(router)
+.mount('#app');
