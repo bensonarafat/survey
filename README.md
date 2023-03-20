@@ -32,6 +32,13 @@ Install npm package
 install php packages
 ### `composer install`
 
+start the laravel server
+### `php artisan serve`
+
+
+start sever for vue
+### `npm run dev`
+
 
 ### Support Me
 
